@@ -1,18 +1,19 @@
 const chooseCarDiv=document.createElement("div");
+const {choose_form}=sections.first;
 const chooseCarContent=`
-<button class="back-btn" type="button">&lt;&lt; back</button>
+<button class="back-btn" type="button">&lt;&lt; ${isArabic?sections.back.ar:sections.back.en}</button>
 <select name="manufacturer" id="manufacturer">
-    <option value="">Car Manufacturer</option>
+    <option value="">${isArabic?choose_form.manufacturer.ar:choose_form.manufacturer.en}</option>
 </select>
 <select name="model" id="model" disabled>
-    <option value="">Model</option>
+    <option value="">${isArabic?choose_form.model.ar:choose_form.model.en}</option>
 </select>
 <select name="year" id="year" disabled>
-    <option value="">Year</option>
+    <option value="">${isArabic?choose_form.year.ar:choose_form.year.en}</option>
     <option value="2003">2003</option>
 </select>
 <button type="button" class="main-btn choose-btn">
-    <p>Choose the car</p>
+    <p>${isArabic?choose_form.button.ar:choose_form.button.en}</p>
     <img src="./assets/first/carIcon.png" alt="">
 </button>
 `;
@@ -62,7 +63,7 @@ chooseCarDiv.innerHTML=chooseCarContent;
     selectBoxes.forEach((sb,index)=>{sb.onchange=()=>{breakDisabled(index)}});
 
     // handle back-btn
-    chooseCarDiv.querySelector(".back-btn").onclick=()=>{showNewStep(typeFormDiv,chooseCarDiv,appendSection);};
+    chooseCarDiv.querySelector(".back-btn").onclick=()=>{showNewStep(typeFormDiv,chooseCarDiv,form.querySelector(".info-q div"));};
     
     // handle choose car button
     chooseCarDiv.querySelector(".choose-btn").onclick=()=>{
@@ -70,10 +71,10 @@ chooseCarDiv.innerHTML=chooseCarContent;
         formData["carModel"]=chooseCarDiv.querySelector("#model").value;
         formData["carYear"]=chooseCarDiv.querySelector("#year").value;
         if(formData["carManufacturer"]&&formData["carModel"]&&formData["carYear"]){
-            showNewStep(secondStepDiv,firstStepSection,appendForm);
+            showNewStep(secondStepDiv,firstStepSection,form);
             handleSecondStep();
         }else{
-            alert("Please Choose The Car Details.");
+            alert(isArabic?choose_form.error.ar:choose_form.error.en);
         }
     }
 })();

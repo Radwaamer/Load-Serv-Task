@@ -1,0 +1,7 @@
+section .car-info form .progress .container{
+    text-align: center;
+    line-height: 1.8;
+}
+section .car-info form .progress p{
+    margin: 1rem 0;
+}

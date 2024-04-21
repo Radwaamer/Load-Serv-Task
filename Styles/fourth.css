@@ -1,0 +1,9 @@
+section .car-info form .fourth-step .shipping-type-input{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 1rem;
+}
+section .car-info form .fourth-step .shipping-type-input input{
+    flex: 0;
+}

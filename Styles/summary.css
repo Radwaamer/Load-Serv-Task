@@ -1,0 +1,44 @@
+section .car-info form .order-summary h3{
+    font-size: 1.4rem;
+    margin: 3rem 0;
+}
+section .car-info form .order-summary .car-info-summary div{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+section .car-info form .order-summary div span{
+    font-size: var(--small-font);
+    font-size: 1rem;
+    color: var(--red-color);
+}
+section .car-info form .order-summary .cart-content-summary img{
+    width: 10rem;
+    height: 10rem;
+}
+section .car-info form .order-summary .personal-info-summary .col{
+    justify-content: unset;
+}
+section .car-info form .order-summary .personal-info-summary .col p{
+    flex: 1;
+}
+.car-info-summary,.cart-content-summary,.personal-info-summary{
+    position: relative;
+}
+.car-info-summary::after,.cart-content-summary::after,.personal-info-summary::after{
+    content: "";
+    width: 100%;
+    position: absolute;
+    background-color: var(--red-color);
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section .car-info form .order-summary .options-summary{
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+section .car-info form .order-summary .options-summary button:nth-child(2){
+    background-color: green;
+}

@@ -24,19 +24,18 @@ const handleSecondStep=()=>{
         partQuantity.value=10;
 
         serialNum.required=true;
-        secondStepDiv.querySelector("[for='serial-number']").innerHTML=`<label for="serial-number">Serial Number <span>*</span></label>`;
 
         // chassisNum.remove();
         chassisNum.style.display="none";
     }
 
     // handle back-btn
-    secondStepDiv.querySelector(".back-btn").onclick=()=>{showNewStep(firstStepSection,secondStepDiv,appendForm);};
+    secondStepDiv.querySelector(".back-btn").onclick=()=>{showNewStep(firstStepSection,secondStepDiv,form);};
 
     // handle choose car button
 secondStepDiv.querySelector(".get-parts").onclick=()=>{
-    const second=()=>{
-        showNewStep(ThirdStepDiv,secondStepDiv,appendForm);
+    const secondFun=()=>{
+        showNewStep(ThirdStepDiv,secondStepDiv,form);
         handleThirdStep();
         getCountries();
     }
@@ -48,20 +47,19 @@ secondStepDiv.querySelector(".get-parts").onclick=()=>{
     }
 
     formData["part_description"]=secondStepDiv.querySelector("#part-description").value;
-    // formData["part_photo"]=secondStepDiv.querySelector("#part-photo").value;
 
     if(formData["part_name"]&&formData["part_quantity"]&&formData["serial_number"]){
         if(formData["type"]=="individual"){
             if(formData["chassis_number"]){
-                second();
+                secondFun();
             }else{
-                alert("Please Complete The Part's Details.");
+                alert(isArabic?second.error.ar:second.error.en);
             }
         }else{
-            second();
+            secondFun();
         }
     }else{
-        alert("Please Complete The Part's Details.");
+        alert(isArabic?second.error.ar:second.error.en);
     }
 }
 

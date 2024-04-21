@@ -9,6 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap" rel="stylesheet">
     <!-- styles -->
     <link rel="stylesheet" href="./Styles/index.css">
+    <link rel="stylesheet" href="./Styles/header.css">
+    <link rel="stylesheet" href="./Styles/first.css">
+    <link rel="stylesheet" href="./Styles/second.css">
+    <link rel="stylesheet" href="./Styles/third.css">
+    <link rel="stylesheet" href="./Styles/fourth.css">
+    <link rel="stylesheet" href="./Styles/summary.css">
+    <link rel="stylesheet" href="./Styles/progress.css">
     <!-- title -->
     <link rel="icon" type="image/x-icon" href="./assets/Logo.png">
     <title>Car parts</title>
@@ -18,15 +25,22 @@
 
         <!-- start header -->
         <header>
-            <img src="./assets/Logo.png" alt="">
-            <h1>Car Parts</h1>
+            <div>
+                <img class="logo" src="./assets/Logo.png" alt="">
+                <h1>Car Parts</h1>
+            </div>
+            <div class="toggle-option">
+                <span>عربي</span>
+                <img class="toggle" src="./assets/toggle.png" alt="">
+                <span>English</span>
+            </div>
         </header>
         <!-- end header -->
 
         <!-- start form content -->
         <section>
             <div class="car-info">
-                <form action="" method="post">
+                <form>
                 </form>
             </div>
             
@@ -36,6 +50,7 @@
     </div>
 
     <!-- scripts -->
+    <script src="./constants/const.js"></script>
     <script src="./Scripts/index.js"></script>
     <script src="./Scripts/sections/first/first.js"></script>
     <script src="./Scripts/sections/first/typeForm.js"></script>

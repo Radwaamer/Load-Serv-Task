@@ -1,0 +1,42 @@
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+header .logo{
+    width: 9rem;
+    transform: rotateY(180deg);
+}
+header h1{
+    position: absolute;
+    left: 7rem;
+    top: -0.8rem;
+    font-family: "Jacquard 24", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--red-color);
+    cursor: text;
+    font-size: 3.8rem;
+}
+header .toggle-option{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    header{
+        display: block;
+    }
+    .toggle-option{
+        width: fit-content;
+        margin-left: auto;
+    }
+    body.rtl .toggle-option{
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+header .toggle-option .toggle{
+    transition: var(--main-transiton);
+}

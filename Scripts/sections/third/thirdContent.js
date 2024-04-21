@@ -1,21 +1,22 @@
 const ThirdStepDiv=document.createElement("div");
+const {third}=sections;
 const thirdStepContent=`
-        <button class="back-btn" type="button">&lt;&lt; back</button>
+        <button class="back-btn" type="button">&lt;&lt; ${isArabic?sections.back.ar:sections.back.en}</button>
         <div class="container">
-            <h2 class="form-title">Personal Information</h2>
+            <h2 class="form-title">${isArabic?third.title.ar:third.title.en}</h2>
             <div class="col">
                 <div>
-                    <label for="user-name">User Name <span>*</span></label>
+                    <label for="user-name">${isArabic?third.name.ar:third.name.en} <span>*</span></label>
                     <input id="user-name" type="text" required>
                 </div>
                 <div>
-                    <label for="email">E-mail <span>*</span></label>
+                    <label for="email">${isArabic?third.email.ar:third.email.en} <span>*</span></label>
                     <input id="email" type="text" required>
                 </div>
             </div>
             <div class="col">
                 <div class="dial-input">
-                    <label  for="phone-number">Phone Number <span>*</span></label>
+                    <label  for="phone-number">${isArabic?third.phone.ar:third.phone.en} <span>*</span></label>
                     <div class="dropdown">
                         <button type="button" class="dropbtn"></button>
                         <ul class="dropdown-content" id="countries">
@@ -26,21 +27,21 @@ const thirdStepContent=`
             </div>
             <div class="col">
                 <div class="password-input">
-                    <label for="password">Password <span>*</span></label>
+                    <label for="password">${isArabic?third.pass.ar:third.pass.en} <span>*</span></label>
                     <input id="password" type="password" required>
                     <img class="show" src="./assets/third/showPass.png" alt="">
                     <img class="hide" src="./assets/third/hidePass.png" alt="">
                 </div>
                 <div class="password-input">
-                    <label for="re-pass">Repeat Password <span>*</span></label>
+                    <label for="re-pass">${isArabic?third.re_pass.ar:third.re_pass.en} <span>*</span></label>
                     <input id="re-pass" type="password" required>
                     <img class="show" src="./assets/third/showPass.png" alt="">
                     <img class="hide" src="./assets/third/hidePass.png" alt="">
                 </div>
             </div>
-            <p class='pass-msg'>password mismatch *</p>
+            <p class='pass-msg'>${isArabic?third.pass_Msg.ar:third.pass_Msg.en} *</p>
             <button class="main-btn submit confirm" type="button">
-                <p>Confirm</p>
+                <p>${isArabic?third.button.ar:third.button.en}</p>
             </button>
         </div>
         `;

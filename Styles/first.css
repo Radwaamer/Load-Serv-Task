@@ -1,0 +1,83 @@
+section{
+    padding: 4rem 0;
+}
+section .car-info .landing{
+    transition: var(--main-transiton);
+}
+section .car-info h2{
+    font-weight: 900;
+    color: var(--red-color);
+    font-size: 2.3rem;
+}
+section .car-info form .first-step .info-q{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    line-height: 1.7;
+}
+@media (max-width: 991px) {
+    section .car-info form .first-step .info-q{
+        flex-direction: column-reverse;
+    }
+}
+section .car-info form .type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.5rem;
+    gap: 3rem;
+    transition: var(--main-transiton);
+}
+section .car-info form .type input{
+    display: none;
+}
+section .car-info form .type label{
+    cursor: pointer;
+    background-color: var(--black-color);
+    border-radius: 50%;
+    display: block;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: var(--white-color);
+    min-width: 9rem;
+}
+
+section .car-info form .choose-car{
+    transform: translateY(12rem);
+    transition: var(--main-transiton);
+    margin-top: 1rem;
+}
+section .car-info form .choose-car select{
+    display: block;
+    margin-top: 2rem;
+    border: solid 1px var(--gray-color);
+    border-top: transparent;
+    border-left: transparent;
+    width: 28rem;
+    padding: 0.7rem 0;
+    outline: none;
+    font-size: 1rem;
+}
+@media (max-width: 768px) {
+    section .car-info form .choose-car select{
+        width: 20rem;
+    }
+}
+section .car-info form .choose-car select option{
+    font-size: 1rem;
+}
+section .car-info form .choose-car .choose-btn{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 4.5rem;
+    display: none;
+    opacity: 0;
+}
+section .car-photo img{
+    width: 100%;
+}
+body.rtl section .car-photo img{
+    transform: rotateY(180deg);
+}

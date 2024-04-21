@@ -48,35 +48,35 @@ async function getCountries(){
     const countriesSelect= document.querySelectorAll("#countries");
     if(countries){
         
+        let countryElements=``;
+        let selectedCountryElement=``;
+        let countryOptions=``;
+
         countries.data.forEach(country=>{
-            fourthStepDiv.querySelector('#country').innerHTML+=`
-            <option value="${country.name}">${country.name}</option>
+            countryOptions +=`<option value="${country.name}">${country.name}</option>`;
+
+            if(country.name=="Egypt"){
+            selectedCountryElement=
             `
-        });
+            <img src=${country.flag} alt=${country.name}>
+            <span>${country.dialCode}</span>
+            `
+        }
+
+        countryElements+=`<li class="country-info"><img src='${country.flag}' alt='${country.name}'>
+        <span>${country.dialCode}</span></li>`;
+        })
 
         countriesSelect.forEach(countrySelect=>{
-            countries.data.forEach(country=>{
-                if(country.name=="Egypt"){
-                    countrySelect.parentElement.querySelector("button").innerHTML=
-                    `
-                    <img src=${country.flag} alt=${country.name}>
-                    <span>${country.dialCode}</span>
-                    `
-                }
-                const option= document.createElement("li");
-                option.innerHTML=
-                `<img src=${country.flag} alt=${country.name}>
-                <span>${country.dialCode}</span>`;
-                countrySelect.appendChild(option);
+            countrySelect.parentElement.querySelector("button").innerHTML=selectedCountryElement;
+            countrySelect.innerHTML=countryElements;
+        })
 
-                option.onclick=()=>{
-                    option.parentElement.parentElement.querySelector("button").innerHTML=
-                    `
-                    <img src=${country.flag} alt=${country.name}>
-                    <span>${country.dialCode}</span>
-                    `
-                }
-            })
+        fourthStepDiv.querySelector('#country').innerHTML=countryOptions;
+        document.querySelectorAll(".country-info").forEach(countryInfoElment=>{
+            countryInfoElment.onclick=()=>{
+                countryInfoElment.parentElement.parentElement.querySelector("button").innerHTML=countryInfoElment.innerHTML;
+            }
         })
     }
 }

@@ -1,9 +1,10 @@
 // first step content
 const firstStepSection=document.createElement("div");
+const {index}=sections.first;
 const firstStepSectionContent=`
 <div class="landing">
-    <h2>Select Your Car</h2>
-    <p>Search for parts from our store and delivery to your place as quickly as possible</p>
+    <h2>${isArabic?index.heading.ar:index.heading.en}</h2>
+    <p>${isArabic?index.description.ar:index.description.en}</p>
 </div>
 <div class="info-q">
     <div>

@@ -55,7 +55,7 @@ const handleThirdStep=()=>{
     repeatPassword();
 
     // handle back-btn
-    ThirdStepDiv.querySelector(".back-btn").onclick=()=>{showNewStep(secondStepDiv,ThirdStepDiv,appendForm);};
+    ThirdStepDiv.querySelector(".back-btn").onclick=()=>{showNewStep(secondStepDiv,ThirdStepDiv,form);};
 
     // handle confirm button
     ThirdStepDiv.querySelector(".confirm").onclick=()=>{
@@ -71,15 +71,15 @@ const handleThirdStep=()=>{
         ThirdStepDiv.querySelector("#re-pass").value){
 
             if(formData["password"].length<8 || formData["password"].length>20){
-                alert("Password must be more than 8 digits and less than 20 digits");
+                alert(isArabic?third.pass_error.ar:third.pass_error.en);
             }else{
-                showNewStep(fourthStepDiv,ThirdStepDiv,appendForm);
+                showNewStep(fourthStepDiv,ThirdStepDiv,form);
                 handleFourthStep();
                 getCountries();
             }
             
         }else{
-            alert("Please enter your information to continue");
+            alert(isArabic?third.error.ar:third.error.en);
         }
     };
 

@@ -1,17 +1,18 @@
 const typeFormDiv=document.createElement("div");
+const {type_form}=sections.first;
 const typeFormContent=`
 <div>
     <input type="radio" name="type" id="individual">
     <label for="individual">
         <img src="./assets/first/single.png" alt="">
-        <p>Individual</p>
+        <p>${isArabic?type_form.individual.ar:type_form.individual.en}</p>
     </label>
 </div>
 <div>
     <input type="radio" name="type" id="company">
     <label for="company">
         <img src="./assets/first/group.png" alt="">
-        <p>Company</p>
+        <p>${isArabic?type_form.company.ar:type_form.company.en}</p>
     </label>
 </div>
 `;
