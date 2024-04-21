@@ -1,0 +1,395 @@
+/* start global styles */
+:root{
+    --main-transiton: 0.3s;
+    --red-color: #A00201;
+    --gray-color: #6A6A6A;
+    --black-color: #000;
+    --white-color:#fff;
+}
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    padding: 1.5rem 0 1rem;
+    color: var(--gray-color);
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+p{
+    font-size: 1.2rem;
+}
+ul{
+    list-style: none;
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+/* small screen */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+
+/* medium screen */
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }
+}
+
+/* large screen */
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+.main-btn{
+    padding: 0.5rem 1rem;
+    background-color: var(--red-color);
+    color: var(--white-color);
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    transition: var(--main-transiton);
+}
+.main-btn:hover{
+    transform: scale(1.1);
+    box-shadow: var(--black-color) 0px 0px 10px -1px;
+}
+.back-btn{
+    color: var(--red-color);
+    background-color: transparent;
+    font-size: 1rem;
+}
+/* end global styles */
+
+
+/* start header */
+header{
+    position: relative;
+}
+header img{
+    width: 9rem;
+    transform: rotateY(180deg);
+}
+header h1{
+    position: absolute;
+    left: 7rem;
+    top: -0.8rem;
+    font-family: "Jacquard 24", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--red-color);
+    cursor: text;
+    font-size: 3.8rem;
+}
+/* end header */
+
+
+/* start first step */
+section{
+    padding: 4rem 0;
+}
+section .car-info .landing{
+    transition: var(--main-transiton);
+}
+section .car-info h2{
+    font-weight: 900;
+    color: var(--red-color);
+    font-size: 2.3rem;
+}
+section .car-info form .first-step .info-q{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    line-height: 1.7;
+}
+@media (max-width: 991px) {
+    section .car-info form .first-step .info-q{
+        flex-direction: column-reverse;
+    }
+}
+section .car-info form .type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.5rem;
+    gap: 3rem;
+    transition: var(--main-transiton);
+}
+section .car-info form .type input{
+    display: none;
+}
+section .car-info form .type label{
+    cursor: pointer;
+    background-color: var(--black-color);
+    border-radius: 50%;
+    display: block;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: var(--white-color);
+}
+
+section .car-info form .choose-car{
+    transform: translateY(12rem);
+    transition: var(--main-transiton);
+    margin-top: 1rem;
+}
+section .car-info form .choose-car select{
+    display: block;
+    margin-top: 2rem;
+    border: solid 1px var(--gray-color);
+    border-top: transparent;
+    border-left: transparent;
+    width: 28rem;
+    padding: 0.7rem 0;
+    outline: none;
+    font-size: 1rem;
+}
+section .car-info form .choose-car select option{
+    font-size: 1rem;
+}
+section .car-info form .choose-car .choose-btn{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 4.5rem;
+    display: none;
+    opacity: 0;
+}
+
+
+/* start second step */
+section .car-info form .form-data{
+    transform: translateY(12rem);
+    transition: var(--main-transiton);
+}
+section .car-info form .form-data .container{
+    width: fit-content;
+    border-top: transparent;
+    margin: auto;
+    padding: 1rem 5rem 2rem;
+    box-shadow: var(--black-color) 0px 30px 38px -30px;
+}
+section .car-info form .form-data .form-title{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+section .car-info form .form-data .col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+@media (max-width: 767px) {
+    section .car-info form .form-data .col{
+        flex-direction: column;
+    }
+}
+section .car-info form .form-data div{
+    margin-bottom: 1rem;
+    width: 100%;
+}
+section .car-info form .form-data label span{
+    color: var(--red-color);
+}
+section .car-info form .form-data input,section .car-info form .form-data textarea,section .car-info form .fourth-step .country-input select{
+    display: block;
+    border: var(--gray-color) solid 1px;
+    border-top: transparent;
+    border-left: transparent;
+    padding: 0.5rem 0.7rem;
+    outline: none;
+    width: 100%;
+}
+section .car-info form .form-data .submit{
+    display: block;
+    margin: 2rem auto 0;
+}
+/* end second step */
+
+/* start third step */
+section .car-info form .dial-input{
+    position: relative;
+}
+section .car-info form .dial-input label{
+    display: block;
+    margin: 2rem 0 1rem;
+}
+section .car-info form .dial-input .dropdown{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 7px;
+    width: fit-content;
+}
+section .car-info form #phone-number{
+    padding-left: 4rem;
+}
+section .car-info form .third-step .password-input{
+    position: relative;
+}
+section .car-info form .third-step .password-input img{
+    position: absolute;
+    bottom: 8px;
+    width: 20px;
+    right: 7px;
+    cursor: pointer;
+}
+section .car-info form .third-step .password-input img.hide{
+    display: none;
+}
+section .car-info form .third-step .pass-msg{
+    color: var(--red-color);
+    font-size: 0.8rem;
+    opacity: 0;
+}
+/* end third step */
+
+/* start fourth step */
+section .car-info form .fourth-step .shipping-type-input{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 1rem;
+}
+section .car-info form .fourth-step .shipping-type-input input{
+    flex: 0;
+}
+/* end fourth step */
+
+section .car-photo img{
+    width: 100%;
+}
+/* end first step */
+
+
+/* start style drop down menu */
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown img{
+    width: 30px;
+    height: 20px;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white-color);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow: auto;
+    height: 9rem;
+}
+
+
+.dropdown-content li {
+    color: var(--black-color);
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+
+.dropdown-content li:hover {
+    background-color: #f1f1f1
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* end style drop down menu */
+
+
+
+/* start order summary */
+section .car-info form .order-summary h3{
+    font-size: 1.4rem;
+    margin: 3rem 0;
+}
+section .car-info form .order-summary .car-info-summary div{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+section .car-info form .order-summary div span{
+    font-size: var(--small-font);
+    font-size: 1rem;
+    color: var(--red-color);
+}
+section .car-info form .order-summary .cart-content-summary img{
+    width: 10rem;
+    height: 10rem;
+}
+section .car-info form .order-summary .personal-info-summary .col{
+    justify-content: unset;
+}
+section .car-info form .order-summary .personal-info-summary .col p{
+    flex: 1;
+}
+.car-info-summary,.cart-content-summary,.personal-info-summary{
+    position: relative;
+}
+.car-info-summary::after,.cart-content-summary::after,.personal-info-summary::after{
+    content: "";
+    width: 100%;
+    position: absolute;
+    background-color: var(--red-color);
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section .car-info form .order-summary .options-summary{
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+section .car-info form .order-summary .options-summary button:nth-child(2){
+    background-color: green;
+}
+/* end order summary */
+
+/* start progress */
+section .car-info form .progress .container{
+    text-align: center;
+    line-height: 1.8;
+}
+section .car-info form .progress p{
+    margin: 1rem 0;
+}
+/* end progress */
