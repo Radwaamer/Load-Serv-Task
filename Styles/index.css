@@ -79,6 +79,57 @@ button{
 /* end global styles */
 
 
+/* start form styles */
+section .car-info form .form-data{
+    transform: translateY(12rem);
+    transition: var(--main-transiton);
+}
+section .car-info form .form-data .container{
+    width: fit-content;
+    border-top: transparent;
+    margin: auto;
+    padding: 1rem 5rem 2rem;
+    box-shadow: var(--black-color) 0px 30px 38px -30px;
+}
+section .car-info form .form-data .form-title{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+section .car-info form .form-data .col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+@media (max-width: 767px) {
+    section .car-info form .form-data .col{
+        flex-direction: column;
+    }
+}
+section .car-info form .form-data div{
+    margin-bottom: 1rem;
+    width: 100%;
+}
+section .car-info form .form-data label span{
+    color: var(--red-color);
+}
+section .car-info form .form-data input,section .car-info form .form-data textarea,section .car-info form .fourth-step .country-input select{
+    display: block;
+    border: var(--gray-color) solid 1px;
+    border-top: transparent;
+    border-left: transparent;
+    padding: 0.5rem 0.7rem;
+    outline: none;
+    width: 100%;
+}
+section .car-info form .form-data .submit{
+    display: block;
+    margin: 2rem auto 0;
+}
+/* end form styles */
+
+
 /* start style drop down menu */
 
 .dropbtn {

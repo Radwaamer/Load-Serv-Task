@@ -76,9 +76,15 @@ const sections={
             en:"Part's Photo",
             ar:"صورة القطعة"
         },
-        button:{
-            en:"Get Car Parts",
-            ar:"احصل علي القطع"
+        buttons:{
+            get:{
+                en:"Get Car Parts",
+                ar:"احصل علي القطع"
+            },
+            add:{
+                en:"Add Anothr Part",
+                ar:"زيادة قطعة اخري"
+            }
         },
         error:{
             en:"Please Complete The Part's Details.",
@@ -217,7 +223,7 @@ const sections={
                 ar:"محتوي الشحنة",
             },
             item:{
-                en:"Item:",
+                en:"Item",
                 ar:"القطعة",
             },
             serial:{
@@ -260,11 +266,11 @@ const sections={
                 ar:"المدينة",
             },
             state:{
-                en:"State:",
+                en:"State",
                 ar:"الحي",
             },
             postal:{
-                en:"Postal Code:",
+                en:"Postal Code",
                 ar:"رقم صندوق البريد",
             },
             

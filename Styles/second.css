@@ -1,47 +1,41 @@
-section .car-info form .form-data{
-    transform: translateY(12rem);
-    transition: var(--main-transiton);
+section .car-info form .second-step .repeater .photo-second{
+    position: relative;
+    padding-top: 2rem;
 }
-section .car-info form .form-data .container{
+section .car-info form .second-step .repeater .photo-second img{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    right: 8px;
+    top: 0;
+    display: none;
+}
+body.rtl section .car-info form .second-step .repeater .photo-second img{
+    left: 8px;
+    right: auto;
+}
+section .car-info form .second-step .repeater hr{
+    height: 3px;
+    margin: 4rem 0;
+    display: block;
+}
+section .car-info form .second-step .repeater .minus{
+    margin-bottom: 2rem;
+    display: block;
     width: fit-content;
-    border-top: transparent;
-    margin: auto;
-    padding: 1rem 5rem 2rem;
-    box-shadow: var(--black-color) 0px 30px 38px -30px;
+    margin-left: auto;
+    margin-right: 1rem;
+    background-color: transparent;
+    box-shadow: black 0px 0px 13px -4px;
+    font-size: 1.8rem;
+    padding: 0 0.8rem;
+    border-radius: 50%;
 }
-section .car-info form .form-data .form-title{
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-}
-section .car-info form .form-data .col{
+section .car-info form .second-step .buttons-second{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    gap: 1rem;
 }
-@media (max-width: 767px) {
-    section .car-info form .form-data .col{
-        flex-direction: column;
-    }
-}
-section .car-info form .form-data div{
-    margin-bottom: 1rem;
-    width: 100%;
-}
-section .car-info form .form-data label span{
-    color: var(--red-color);
-}
-section .car-info form .form-data input,section .car-info form .form-data textarea,section .car-info form .fourth-step .country-input select{
-    display: block;
-    border: var(--gray-color) solid 1px;
-    border-top: transparent;
-    border-left: transparent;
-    padding: 0.5rem 0.7rem;
-    outline: none;
-    width: 100%;
-}
-section .car-info form .form-data .submit{
-    display: block;
-    margin: 2rem auto 0;
+section .car-info form .second-step .buttons-second button:nth-child(2){
+    background-color: #689F38;
 }

@@ -52,10 +52,12 @@ chooseCarDiv.innerHTML=chooseCarContent;
             chooseBtn.style.display="flex";
             setTimeout(()=>{chooseBtn.style.opacity=1;},300);
             document.querySelector(".car-photo img").src="./assets/first/teslaCar.png";
+            formData["carImg"]=carImg.src;
         }else{
             setTimeout(()=>{chooseBtn.style.display="none";},300)
             chooseBtn.style.opacity=0;
-            document.querySelector(".car-photo img").src="./assets/first/car.png";
+            const carImg=document.querySelector(".car-photo img")
+            carImg.src="./assets/first/car.png";
         }
     }
 

@@ -5,30 +5,39 @@ function handleSummary(){
     const {summary}=sections;
 
     // append fourth form
+    let cartContent=``
+    formData["parts_data"].forEach(data=>{
+        cartContent+= `<div class="col">
+        ${data["part_photo"]?`<img src=${data["part_photo"]} alt="">`:""}
+            <div>
+                <p>${isArabic?summary.second.item.ar:summary.second.item.en}: <span>${data["part_quantity"]} X ${data["part_name"]}</span></p>
+                <p>${isArabic?summary.second.serial.ar:summary.second.serial.en}: <span>${data["serial_number"]}</span></p>
+                ${data["chassis_number"]?`<p>${isArabic?summary.second.chassis.ar:summary.second.chassis.en}: <span>${data["chassis_number"]}</span></p>`:""}
+                ${data["part_description"]?
+                `<p><span>${data["part_description"]}</span></p>`:""}
+                
+            </div>
+        </div>
+        <hr/>`
+    });
+
     const summaryContent=`
     <div class="container">
         <h2 class="form-title">${isArabic?summary.title.ar:summary.title.en}</h2>
         <div class="car-info-summary">
             <h3>${isArabic?summary.first.title.ar:summary.first.title.en}</h3>
-            <div>
-                <p>${isArabic?summary.first.manufacturer.ar:summary.first.manufacturer.en} <br><span>${formData["carManufacturer"]}</span></p>
-                <p>${isArabic?summary.first.model.ar:summary.first.model.en} <br><span>${formData["carModel"]}</span></p>
-                <p>${isArabic?summary.first.year.ar:summary.first.year.en} <br><span>${formData["carYear"]}</span></p>
+            <div class="col">
+            <img src=${formData["carImg"]} alt="">
+                <div>
+                    <p>${isArabic?summary.first.manufacturer.ar:summary.first.manufacturer.en}: <span>${formData["carManufacturer"]}</span></p>
+                    <p>${isArabic?summary.first.model.ar:summary.first.model.en}: <span>${formData["carModel"]}</span></p>
+                    <p>${isArabic?summary.first.year.ar:summary.first.year.en}: <span>${formData["carYear"]}</span></p>
+                </div>
             </div>
         </div>
         <div class="cart-content-summary">
             <h3>${isArabic?summary.second.title.ar:summary.second.title.en}</h3>
-            <div class="col">
-            ${formData["part_photo"]?`<img src=${formData["part_photo"]} alt="">`:""}
-                <div>
-                    <p>${isArabic?summary.second.item.ar:summary.second.item.en}: <span>${formData["part_quantity"]} X ${formData["part_name"]}</span></p>
-                    <p>${isArabic?summary.second.serial.ar:summary.second.serial.en}: <span>${formData["serial_number"]}</span></p>
-                    ${formData["chassis_number"]?`<p>${isArabic?summary.second.chassis.ar:summary.second.chassis.en}: <span>${formData["chassis_number"]}</span></p>`:""}
-                    ${formData["part_description"]?
-                    `<p><span>${formData["part_description"]}</span></p>`:""}
-                    
-                </div>
-            </div>
+            ${cartContent}
         </div>
         <div class="personal-info-summary">
             <h3>${isArabic?summary.third.title.ar:summary.third.title.en}</h3>
